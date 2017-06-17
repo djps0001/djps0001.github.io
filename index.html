@@ -1,19 +1,73 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>B02504079-張書維</title>
-</head>
+<html lang="zh-tw">
 
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>心理測驗</title>
 
-    <h1>哈囉，我的第一個網頁</h1>
+<div class="container">
+    <div class="jumbotron">
+        <h1>潛在人格心理測驗</h1>
+    </div>
 
-    <a href="http://www.google.com.tw">Google</a>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+    </head>
 
-</body>
 
-</html>
+    <script>
+        function showAnswer() {
+            var check = false;
+            var form_name = document.getElementById('form1');
+            for (var i = 0; i < form_name.testing.length; i++) {
+                if (form_name.testing[i].checked) {
+                    document.getElementById(form_name.testing[i].value + 'A').style.display = '';
+                    check = true;
+                } else {
+                    document.getElementById(form_name.testing[i].value + 'A').style.display = 'none';
+                }
+            }
+            if (!check) alert("請選擇一個答案");
+        }
+    </script>
+
+    <div id="context" itemprop="articleBody">
+
+        <form method="post" name="form1" id="form1">
+
+            <p style="color: rgba(255, 255, 255, 1); background-color: black; box-shadow: 0 0 20px 9px black">俄羅斯軍隊用這六個圖像來發現新兵隱藏的心理疾病，不能看到某個圓圈中的數字，就說明某方面性格傾向。</p>
+
+            <img src="001.jpg" alt="">
+
+            <p><input type="radio" name="testing" value="O1" /> 看不見1</p>
+
+            <p style="display:none;color:#E1771E;margin:20px;" class="highlight" id="O1A">你選擇了「看不見１」<br/><br/>侵略性強</p>
+
+            <p><input type="radio" name="testing" value="O2" /> 看不見2</p>
+
+            <p style="display:none;color:#E1771E;margin:20px;" class="highlight" id="O2A">你選擇了「看不見２」<br/><br/>智力較低</p>
+
+            <p><input type="radio" name="testing" value="O3" /> 看不見3</p>
+
+            <p style="display:none;color:#E1771E;margin:20px;" class="highlight" id="O3A">你選擇了「看不見３」<br/><br/>生活放蕩敗壞</p>
+
+            <p><input type="radio" name="testing" value="O4" /> 看不見4</p>
+
+            <p style="display:none;color:#E1771E;margin:20px;" class="highlight" id="O4A">你選擇了「看不見４」<br/><br/>傾向暴力領導</p>
+
+            <p><input type="radio" name="testing" value="O5" /> 看不見5</p>
+
+            <p style="display:none;color:#E1771E;margin:20px;" class="highlight" id="O5A">你選擇了「看不見５」<br/><br/>可能輕易被同性吸引，有潛在的同性戀傾向</p>
+
+            <p><input type="radio" name="testing" value="O6" /> 看不見6</p>
+
+            <p style="display:none;color:#E1771E;margin:20px;" class="highlight" id="O6A">你選擇了「看不見６」<br/><br/>可能輕易會精神分裂，需要額外關注></p>
+
+
+    </div>
+
+    <input type="button" value="點擊看解答" onclick="showAnswer()" class="btn btn-primary" />
+
+    </form>
